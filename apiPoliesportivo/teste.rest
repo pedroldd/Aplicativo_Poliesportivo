@@ -1,0 +1,27 @@
+### Cadastro: cria conta e devolve um token
+POST http://localhost:8000/auth/cadastro/
+Content-Type: application/json
+
+{
+  "username": "adam",
+  "password": "Pass1234!",
+  "user_cpf": "12345678901",
+  "user_nickname": "adam",
+  "first_name": "Adam",
+  "last_name": "Silva",
+  "email": "adam@mail.com",
+  "user_age": 25
+}
+
+### Login: usa as credenciais da conta cadastrada
+POST http://localhost:8000/auth/login/
+Content-Type: application/json
+
+{
+  "username": "adam",
+  "password": "Pass1234!"
+}
+
+### Teste protegido: substitua o valor pelo token recebido no cadastro/login
+GET http://localhost:8000/auth/teste_token/
+Authorization: Token d50c5fe82cd964d499037a453f83ff7bc4d7c83e
